@@ -1,0 +1,19 @@
+---
+- name: Install LAMP Stack
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Install MySQL
+      apt:
+        name: mysql-server
+        state: present
+
+    - name: Install PHP
+      apt:
+        name: php
+        state: present
